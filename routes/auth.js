@@ -8,7 +8,7 @@ const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
 //Login route
-router.post("/login", (req, res,next) =>{
+router.post("/login", (req, res, next) =>{
   passport.authenticate("local", (err, user) => {
     if(err){return next(err)}
     if (!user){return res.status(401).json({error:'user not authenticated'});}
